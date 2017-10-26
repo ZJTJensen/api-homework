@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+    <script>
+    $(document).ready(function(){
+        for(i = 1; i <=151; i++){
+        $('#pokemonlist').append("<div class= 'pokemon'><div id='block'><img  id = '"+ i +"' src = 'http://pokeapi.co/media/img/"+ i +".png'></div></div>");
+        }
+        $(document).on("click", "img", function(){
+            var pokenum = $(this).attr('id');
+            $('#data').css("display", "inline-block");
+            var imgsrc = $(this).attr('src');
+            $('.pokedex').attr('src', imgsrc);
+        
+            
+            $.get("https://pokeapi.co/api/v2/pokemon/"+pokenum+"/", function(res) {
+                $('h2').html(res.name);
+                $('.height').html('<p>'+res.height+'</p>');
+
+                $('.weight').html('<p>'+res.weight+' kg </p>');
+                $(".type").html("<ul></ul>");
+                for(var i = 0; i < res.types.length; i++) {
+                    $("ul").append("<li>"+res.types[i].type.name+"</li>");
+                };
+            },"json");
+
+
+           
+         
+     
+        })
+          
+    });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <div id= "wrapper">
+            <div id ="pokemonlist">
+               
+            </div>
+            <div id = "data">
+                <h2></h2>
+                <img class = "pokedex" src="">
+                
+                    <h3 class="bold" >Types</h3>
+                    <div class="type">
+                </div>
+                
+                    <h3 class="bold" >Height</h3>
+                    <div class="height">
+                </div>
+                
+                    <h3 class="bold" >Weight</h3>
+                    <div class="weight">
+                    </div>
+            </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+*{
+    outline: 1px solid red;
+}
+    #wrapper{
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.house img{
+    width: auto;
+    height: 220px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 5px 10px 5px;
+ 
+}
+.house{
+    display: inline-block;
+
+}
+#upper{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#lower{
+    width: 620px;
+    height: auto;
+    margin: 100px auto;
+}
+h3, h5, p{
+    color: gold;
+}

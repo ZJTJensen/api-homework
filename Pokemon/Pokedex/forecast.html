@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+    <script>
+    $(document).ready(function() {
+        $('form').submit(function() {
+            // your code here (build up your url)
+            $.get(url, function(res) {
+                "http://api.openweathermap.org/data/2.5/weather?q=&APPID=a0ab82d8ef9376c513ef1aa53e5afe80"
+                // your code here
+            }, 'json');
+            // don't forget to return false so the page doesn't refresh
+            return false;
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id ="wrapper">
+        <div id ="location">
+            <input type="text" id="place">
+            <button>Search Weather</button>
+
+        </div>
+        <div id="output">
+
+            <h1>
+
+            </h1>
+            <p>
+
+            </p>
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+    <script>
+    $(document).ready(function(){
+        $('.stark').click(function(){
+            $.get("https://www.anapioficeandfire.com/api/houses/362", function(res){
+                for(var i = 0; i < res.titles.length; i++) {
+                    console.log(res.titles[i]);
+                    $(".Titles").html("<p>"+res.titles[i]+"</p>");
+                }
+                $(".Names").html("<p>"+res.name+"</p>");
+                $(".Words").html("<p>"+res.words+"</p>");
+
+
+
+            }, "json");
+        });
+        $('.targ').click(function(){
+            $.get("https://www.anapioficeandfire.com/api/houses/378", function(res){
+                for(var i = 0; i < res.titles.length; i++) {
+                    console.log(res.titles[i]);
+                    $(".Titles").html("<p>"+res.titles[i]+"</p>");
+                }
+                $(".Names").html("<p>"+res.name+"</p>");
+                $(".Words").html("<p>"+res.words+"</p>");
+
+            }, "json");
+        });
+        $('.lannister').click(function(){
+            $.get("https://www.anapioficeandfire.com/api/houses/229", function(res){
+                for(var i = 0; i < res.titles.length; i++) {
+                    console.log(res.titles[i]);
+                    $(".Titles").html("<p>"+res.titles[i]+"</p>");
+                }
+                $(".Names").html("<p>"+res.name+"</p>");
+                $(".Words").html("<p>"+res.words+"</p>");
+            }, "json");
+        });
+        $('.baratheon').click(function(){
+            $.get("https://www.anapioficeandfire.com/api/houses/15", function(res){
+                for(var i = 0; i < res.titles.length; i++) {
+                    console.log(res.titles[i]);
+                    $(".Titles").html("<p>"+res.titles[i]+"</p>");
+                }
+                $(".Names").html("<p>"+res.name+"</p>");
+                $(".Words").html("<p>"+res.words+"</p>");
+            }, "json");
+        });
+
+    });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id= "wrapper">
+        <div id ="upper">
+            <div class="house">
+                <img class = "stark" src="stark.jpg" alt="">
+            </div>
+            <div class="house">
+                <img class="targ"src="targaryen.jpg" alt="">
+            </div>
+            <div class="house">
+                <img class = "lannister"src="lannister.jpg" alt="">
+            </div>
+            <div class="house">
+                <img class="baratheon" src="baratheon.png" alt="">
+            </div>
+        </div>
+        <div id="lower">
+            <h3>House Details</h3>
+            <div id="infohouse">
+                <h5>Name: </h5>
+                <div class ="Names">
+
+                </div>
+
+                <h5>Words: </h5>
+                <div  class="Words">
+
+                </div>
+                <h5 >Titles: </h5>
+                <div class="Titles">
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

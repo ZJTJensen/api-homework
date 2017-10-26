@@ -1,0 +1,57 @@
+
+
+#wrapper{
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#pokemonlist{
+    width:800px;
+    height: auto;
+    display: inline-block
+}
+
+#data{
+    width: 200px;
+    height:auto;
+    float: right;
+    display: none;
+    text-align: center;
+    background-color: red;
+
+}
+
+.bold{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.pokemon{
+    width:160px;
+    height:120px;
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: top;
+    
+}
+p{
+    padding: 0 0 0 10px;
+}
+ul{
+    text-align: right;
+}
+
+img{
+
+    width: auto;
+    height: 120px;
+    margin: 0 auto;
+}
+
+#block{
+    height: 124px;
+    width: 160px;
+    margin: 0 auto;
+    text-align: center;
+}
